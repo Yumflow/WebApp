@@ -18,12 +18,7 @@ import Button from '@/ui/Button.vue'
 
 import { useWebAppHapticFeedback } from 'vue-tg'
 
-const props = defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-})
+const props = defineProps(['product'])
 
 const haptic = useWebAppHapticFeedback()
 

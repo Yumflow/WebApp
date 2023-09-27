@@ -22,7 +22,7 @@ defineProps({
   }
 })
 
-function addToBag(product) {
+function addToBag(product: object) {
   bagStore.addItem(product)
 }
 </script>
