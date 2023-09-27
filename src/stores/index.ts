@@ -1,0 +1,1 @@
+export { default as useBagStore } from '@/stores/bag'
