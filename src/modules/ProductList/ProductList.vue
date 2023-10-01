@@ -4,6 +4,7 @@
       v-for="product in products"
       :product="product"
       @addToBag="addToBag"
+      @removeFromBag="removeFromBag"
     />
   </div>
 </template>
@@ -12,6 +13,7 @@
 import ProductCard from '@/components/ProductCard.vue'
 
 import { useBagStore } from '@/stores'
+import type { IProduct } from '@/types/product'
 
 const bagStore = useBagStore()
 
@@ -22,8 +24,12 @@ defineProps({
   }
 })
 
-function addToBag(product: object) {
-  bagStore.addItem(product)
+function addToBag(product: IProduct) {
+  bagStore.add(product)
+}
+
+function removeFromBag(product: IProduct) {
+  bagStore.remove(product)
 }
 </script>
 

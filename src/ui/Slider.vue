@@ -27,7 +27,7 @@ onMounted(() => theme.setHeaderColor('#ffffff'))
 .slider
   position: sticky
   top: 0
-  background-color: white
+  background-color: var(--tg-theme-bg-color)
   width: 100%
   scrollbar-width: none
 

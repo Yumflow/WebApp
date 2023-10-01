@@ -1,6 +1,6 @@
 <template>
   <div class="product-table">
-    <div v-for="product in products" class="product-table__product">
+    <div v-for="({ product, count }) in products" class="product-table__product">
       <div class="product-table__product-header">
         <div class="product-table__product-image">
           <Image :src="product.image" />
@@ -16,9 +16,9 @@
         <div class="product-table__product-price">{{ product.price }} руб.</div>
 
         <div class="product-table__controls">
-          <div class="product-table__controls-button">-</div>
-          <div class="product-table__controls-value">1</div>
-          <div class="product-table__controls-button">+</div>
+          <div class="product-table__controls-button" @click="onRemoveClick(product)">-</div>
+          <div class="product-table__controls-value">{{ count }}</div>
+          <div class="product-table__controls-button" @click="onAddClick(product)">+</div>
         </div>
       </div>
     </div>
@@ -27,6 +27,7 @@
 
 <script setup>
 import Image from '@/ui/Image.vue'
+import { useBagStore } from '@/stores'
 
 defineProps({
   products: {
@@ -34,6 +35,16 @@ defineProps({
     required: true,
   },
 })
+
+const bagStore = useBagStore()
+
+function onAddClick(product) {
+  bagStore.add(product)
+}
+
+function onRemoveClick(product) {
+  bagStore.remove(product)
+}
 </script>
 
 <style scoped lang="sass">
@@ -79,16 +90,21 @@ defineProps({
   &__controls
     font-size: 18px
     display: flex
+    justify-content: space-between
     align-items: center
-    width: fit-content
     padding: 4px 12px
     gap: 16px
     background-color: lavender
     border-radius: 8px
+    width: 100px
+    user-select: none
 
     &-button
       position: relative
       bottom: 1px
+      font-size: 22px
+      line-height: 19px
+      cursor: pointer
 
     &-value
       font-weight: 500

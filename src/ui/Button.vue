@@ -13,11 +13,6 @@ import Image from '@/ui/Image.vue'
 import { computed } from 'vue'
 
 const props = defineProps({
-  isPrimary: {
-    type: Boolean,
-    default: false
-  },
-
   isSecondary: {
     type: Boolean,
     default: false
@@ -36,7 +31,6 @@ const props = defineProps({
 
 const buttonClasses = computed(() => {
   return {
-    '--primary': props.isPrimary,
     '--secondary': props.isSecondary,
     '--square': props.isSquare,
   }
@@ -46,25 +40,24 @@ const buttonClasses = computed(() => {
 <style scoped lang="sass">
 .button
   cursor: pointer
-  padding: 0 12px
-  font-size: 16px
+  padding: 8px 12px
   white-space: nowrap
-  font-weight: 500
-  height: 36px
   border-radius: 8px
   border: 1px solid transparent
   transition: background-color 0.3s ease, opacity 0.3s ease
-  background-color: transparent
   color: white
+  font-weight: 800
+  text-transform: uppercase
+  background-color: #f8a917
+  font-size: 14px
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 36px
+  user-select: none
 
-  &.--primary
-    font-weight: 800
-    text-transform: uppercase
-    background-color: #f8a917
-    font-size: 14px
-
-    &:hover
-      background-color: var(--background-primary-light)
+  &:hover
+    background-color: transparentize(#f8a917, 0.3)
 
   &.--secondary
     background-color: transparent

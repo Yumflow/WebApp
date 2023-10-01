@@ -1,29 +1,24 @@
 <template>
   <main class="main">
     <RouterView />
-
-    <MadeBy class="main__footer" />
   </main>
 </template>
 
 <script setup>
-import MadeBy from '@/ui/MadeBy.vue'
-
-import { onMounted, ref } from 'vue'
-import { useWebAppViewport, useWebApp } from 'vue-tg'
-import { useRoute } from 'vue-router'
-
-const data = ref(null)
-
-const route = useRoute()
+import { onMounted } from 'vue'
+import { useWebAppViewport } from 'vue-tg'
 
 const viewport = useWebAppViewport()
 
 onMounted(() => {
   viewport.expand()
 
-  data.value = route.query.shop
-  console.log(route)
+  // disable double tap zoom
+  document.addEventListener(
+    'dblclick',
+    event => event.preventDefault(),
+    { passive: false }
+  )
 })
 </script>
 
