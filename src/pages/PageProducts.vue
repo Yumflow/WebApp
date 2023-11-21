@@ -4,7 +4,7 @@
 
     <ProductList :products="products" />
 
-    <AppFooter />
+    <AppFooter class="page-products__footer" />
 
     <MainButton v-if="bagStore.products.length" text="Перейти в корзину" @click="onMainClick" />
   </div>
@@ -84,4 +84,7 @@ function onMainClick() {
   flex-direction: column
   align-items: center
   width: 100%
+
+  &__footer
+    margin-top: 12px
 </style>

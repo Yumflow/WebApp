@@ -1,15 +1,15 @@
 <template>
-  <div class="made-by">
-    <Image src="./images/yumflow-with-title.svg" class="made-by__logo" />
+  <div class="footer">
+    <Image src="./images/yumflow-with-title.svg" class="footer__logo" />
 
-    <!--    <div class="made-by__text">-->
+    <!--    <div class="footer__text">-->
     <!--      Powered by-->
-    <!--      <a href="#" target="_blank" class="made-by__link" @click="onLinkClick">Yumflow</a>-->
+    <!--      <a href="#" target="_blank" class="footer__link" @click="onLinkClick">Yumflow</a>-->
     <!--    </div>-->
 
-    <div class="made-by__animation">
-      <Vue3Lottie :animation-data="YummyLottie" />
-    </div>
+<!--    <div class="footer__animation">-->
+<!--      <Vue3Lottie :animation-data="YummyLottie" />-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -29,21 +29,22 @@ function onLinkClick(e) {
 </script>
 
 <style scoped lang="sass">
-.made-by
+.footer
   display: flex
   align-items: center
-  justify-content: space-between
+  justify-content: center
   padding: 24px 0
   width: 100%
 
   &__logo
     color: grey
-    height: 40px
+    height: 36px
     cursor: pointer
     transition: color 0.3s ease
+    user-select: none
 
     &:hover
-      color: #E9B824
+      color: #FFB000
 
   &__text
     color: grey

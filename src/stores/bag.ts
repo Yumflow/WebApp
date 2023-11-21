@@ -2,6 +2,8 @@ import { defineStore } from 'pinia'
 import { BigNumber } from '@/helpers/number'
 import type { IBagState, IProduct } from '@/types/product'
 
+const MAX_PRODUCT_COUNT = 100
+
 const useBagStore = defineStore('bag', {
   state: (): IBagState => ({
     products: [],
@@ -25,6 +27,10 @@ const useBagStore = defineStore('bag', {
       const productIndex = this.products.findIndex(p => p.product.id === product.id)
 
       if (productIndex >= 0) {
+        if (this.products[productIndex].count >= MAX_PRODUCT_COUNT) {
+          return
+        }
+
         this.products[productIndex].count += 1
       } else {
         this.products.push({ product, count: 1 })

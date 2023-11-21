@@ -48,7 +48,7 @@ const buttonClasses = computed(() => {
   color: white
   font-weight: 800
   text-transform: uppercase
-  background-color: #f8a917
+  background-color: #FFB000
   font-size: 14px
   display: flex
   align-items: center
