@@ -2,15 +2,22 @@
   <main class="main">
     <RouterView />
   </main>
+
+  <AppLoader />
 </template>
 
 <script setup>
+import AppLoader from '@/modules/AppLoader/AppLoader.vue'
 import { onMounted } from 'vue'
 import { useWebAppViewport } from 'vue-tg'
+import { useLayoutStore } from '@/stores'
 
 const viewport = useWebAppViewport()
+const layoutStore = useLayoutStore()
 
 onMounted(() => {
+  layoutStore.startLoading()
+
   viewport.expand()
 
   // disable double tap zoom
@@ -19,6 +26,8 @@ onMounted(() => {
     event => event.preventDefault(),
     { passive: false }
   )
+
+  setTimeout(layoutStore.stopLoading, 2000)
 })
 </script>
 
