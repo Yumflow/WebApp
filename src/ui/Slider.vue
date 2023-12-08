@@ -46,8 +46,9 @@ function onCategoryClick(category) {
     overflow-x: scroll
 
   &__tab
-    background-color: #f6f5f4
-    color: black
+    //background-color: #f6f5f4
+    //color: black
+    background-color: var(--tg-theme-secondary-bg-color)
     font-size: 18px
     padding: 8px 12px
     border-radius: 12px
