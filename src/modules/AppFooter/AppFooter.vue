@@ -1,30 +1,22 @@
 <template>
   <div class="footer">
-    <Image src="./images/yumflow-with-title.svg" class="footer__logo" />
-
-    <!--    <div class="footer__text">-->
-    <!--      Powered by-->
-    <!--      <a href="#" target="_blank" class="footer__link" @click="onLinkClick">Yumflow</a>-->
-    <!--    </div>-->
-
-<!--    <div class="footer__animation">-->
-<!--      <Vue3Lottie :animation-data="YummyLottie" />-->
-<!--    </div>-->
+    <Image
+      src="./images/yumflow-with-title.svg"
+      class="footer__logo"
+      @click="onLinkClick"
+    />
   </div>
 </template>
 
 <script setup>
-import { useWebAppNavigation } from 'vue-tg'
-import { Vue3Lottie } from 'vue3-lottie'
-
-import YummyLottie from '@/assets/lotties/yummy.json'
 import Image from '@/ui/Image.vue'
+import { useWebAppNavigation } from 'vue-tg'
 
 const navigation = useWebAppNavigation()
 
 function onLinkClick(e) {
   e.preventDefault()
-  navigation.openLink('https://t.me/yumflow')
+  navigation.openTelegramLink('https://t.me/yumflow')
 }
 </script>
 
@@ -45,14 +37,4 @@ function onLinkClick(e) {
 
     &:hover
       color: #FFB000
-
-  &__text
-    color: grey
-
-  &__link
-    color: inherit
-
-  &__animation
-    height: 56px
-    width: 56px
 </style>

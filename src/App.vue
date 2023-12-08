@@ -27,7 +27,7 @@ onMounted(() => {
     { passive: false }
   )
 
-  setTimeout(layoutStore.stopLoading, 2000)
+  setTimeout(layoutStore.stopLoading, 0)
 })
 </script>
 

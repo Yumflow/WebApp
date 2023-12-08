@@ -6,11 +6,11 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      redirect: '/products'
+      redirect: '/menu'
     },
     {
-      path: '/products',
-      name: 'products',
+      path: '/menu',
+      name: 'menu',
       component: () => import('@/pages/PageProducts.vue')
     },
     {
