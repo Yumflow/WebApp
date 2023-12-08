@@ -29,12 +29,12 @@ function onLinkClick(e) {
   width: 100%
 
   &__logo
-    color: grey
+    color: var(--color-text-hint)
     height: 36px
     cursor: pointer
     transition: color 0.3s ease
     user-select: none
 
     &:hover
-      color: #FFB000
+      color: var(--color-background-accent)
 </style>

@@ -54,7 +54,7 @@ function onConfirmClick() {
 
     &-text
       text-align: center
-      color: grey
+      color: var(--color-text-hint)
       margin-top: 24px
       font-size: 16px
 </style>

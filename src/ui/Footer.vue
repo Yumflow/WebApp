@@ -37,7 +37,7 @@ function onLinkClick(e) {
   width: 100%
 
   &__logo
-    color: grey
+    color: var(--color-text-hint)
     height: 40px
     cursor: pointer
     transition: color 0.3s ease
@@ -46,7 +46,7 @@ function onLinkClick(e) {
       color: #E9B824
 
   &__text
-    color: grey
+    color: var(--color-text-hint)
 
   &__link
     color: inherit

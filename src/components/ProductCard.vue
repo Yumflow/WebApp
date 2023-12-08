@@ -54,7 +54,7 @@ function onRemoveClick() {
   flex-direction: column
   align-items: center
   //background-color: #f6f5f4
-  background-color: var(--tg-theme-secondary-bg-color)
+  background-color: var(--color-background-secondary)
   border-radius: 16px
   padding: 12px
   width: 100%

@@ -94,7 +94,7 @@ function onRemoveClick(product) {
     align-items: center
     padding: 4px 12px
     gap: 16px
-    background-color: lavender
+    background-color: var(--color-background-secondary)
     border-radius: 8px
     width: 100px
     user-select: none

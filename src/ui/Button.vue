@@ -48,7 +48,7 @@ const buttonClasses = computed(() => {
   color: white
   font-weight: 800
   text-transform: uppercase
-  background-color: #FFB000
+  background-color: var(--color-background-accent)
   font-size: 14px
   display: flex
   align-items: center
@@ -58,14 +58,6 @@ const buttonClasses = computed(() => {
 
   &:hover
     background-color: transparentize(#f8a917, 0.3)
-
-  &.--secondary
-    background-color: transparent
-    border: 1px solid var(--background-stroke)
-    font-weight: 500
-
-    &:hover
-      background-color: var(--background-stroke)
 
   &.--square
     padding: 6px

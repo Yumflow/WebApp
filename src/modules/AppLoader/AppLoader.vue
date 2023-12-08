@@ -28,7 +28,7 @@ watch(isLoading, (is) => {
   left: 0
   height: 100%
   width: 100%
-  background-color: var(--tg-theme-bg-color)
+  background-color: var(--color-background-primary)
   z-index: 100
   display: flex
   justify-content: center
@@ -42,5 +42,5 @@ watch(isLoading, (is) => {
 
   &__logo
     height: 48px
-    color: grey
+    color: var(--color-text-hint)
 </style>
