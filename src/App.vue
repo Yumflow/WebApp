@@ -9,16 +9,18 @@
 <script setup>
 import AppLoader from '@/modules/AppLoader/AppLoader.vue'
 import { onMounted } from 'vue'
-import { useWebAppViewport } from 'vue-tg'
+import { useWebAppClosingConfirmation, useWebAppViewport } from 'vue-tg'
 import { useLayoutStore } from '@/stores'
 
 const viewport = useWebAppViewport()
+const closingConfirmation = useWebAppClosingConfirmation()
 const layoutStore = useLayoutStore()
 
 onMounted(() => {
   layoutStore.startLoading()
 
   viewport.expand()
+  closingConfirmation.enableClosingConfirmation()
 
   // disable double tap zoom
   document.addEventListener(
