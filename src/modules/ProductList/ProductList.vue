@@ -1,7 +1,11 @@
 <template>
   <div class="product-list">
-    <div v-for="category in categories" class="product-list__category">
-      <div :id="category.id" class="product-list__category-id"></div>
+    <div
+      v-for="category in categories"
+      class="product-list__category category"
+      :id="category.id"
+    >
+      <div :id="`category-${category.id}`" class="product-list__category-id"></div>
 
       <div class="product-list__category-title">{{ category.title }}</div>
 
@@ -50,7 +54,7 @@ function removeFromBag(product: IProduct) {
   width: 100%
   display: flex
   flex-direction: column
-  gap: 24px
+  gap: 48px
 
   &__category
     position: relative
@@ -61,13 +65,14 @@ function removeFromBag(product: IProduct) {
       visibility: hidden
       pointer-events: none
       position: absolute
-      top: -62px
+      top: -74px
       height: 1px
 
     &-title
-      font-size: 24px
+      font-size: 28px
       font-weight: 700
       margin-bottom: 16px
+      padding-left: 12px
 
     &-body
       display: grid
