@@ -13,6 +13,7 @@
 <script setup>
 import { useWebAppTheme } from 'vue-tg'
 import { computed, onMounted } from 'vue'
+import { scrollToElementById } from '@/helpers/scroll'
 
 const props = defineProps({
   categories: {
@@ -25,7 +26,7 @@ const theme = useWebAppTheme()
 const backgroundColor = computed(() => theme.headerColor)
 
 function onCategoryClick(category) {
-  document.querySelector(`#${category.id}`).scrollIntoView({ behavior: 'smooth' })
+  scrollToElementById(category.id)
 }
 </script>
 

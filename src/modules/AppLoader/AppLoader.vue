@@ -28,7 +28,7 @@ watch(isLoading, (is) => {
   left: 0
   height: 100%
   width: 100%
-  background-color: white
+  background-color: var(--tg-theme-bg-color)
   z-index: 100
   display: flex
   justify-content: center
