@@ -1,13 +1,11 @@
 <template>
   <div class="slider" :style="{ 'background-color': backgroundColor }">
     <div class="slider__inner scrollbar-hidden">
-      <div class="slider__tab">Наггетсы</div>
-      <div class="slider__tab">Курочка</div>
-      <div class="slider__tab">Картошка</div>
-      <div class="slider__tab">Роллы</div>
-      <div class="slider__tab">Салаты</div>
-      <div class="slider__tab">Напитки</div>
-      <div class="slider__tab">Соусы</div>
+      <div
+        v-for="category in categories"
+        class="slider__tab"
+        @click="onCategoryClick(category)"
+      >{{ category.title }}</div>
     </div>
   </div>
 </template>
@@ -16,11 +14,19 @@
 import { useWebAppTheme } from 'vue-tg'
 import { computed, onMounted } from 'vue'
 
-const theme = useWebAppTheme()
+const props = defineProps({
+  categories: {
+    type: Array,
+    required: true,
+  }
+})
 
+const theme = useWebAppTheme()
 const backgroundColor = computed(() => theme.headerColor)
 
-onMounted(() => theme.setHeaderColor('#ffffff'))
+function onCategoryClick(category) {
+  document.querySelector(`#${category.id}`).scrollIntoView({ behavior: 'smooth' })
+}
 </script>
 
 <style scoped lang="sass">
@@ -30,6 +36,7 @@ onMounted(() => theme.setHeaderColor('#ffffff'))
   background-color: var(--tg-theme-bg-color)
   width: 100%
   scrollbar-width: none
+  z-index: 1
 
   &__inner
     display: flex
@@ -47,6 +54,7 @@ onMounted(() => theme.setHeaderColor('#ffffff'))
     cursor: pointer
     transition: opacity 0.3s ease
     user-select: none
+    white-space: nowrap
 
     &:hover
       opacity: 0.7
