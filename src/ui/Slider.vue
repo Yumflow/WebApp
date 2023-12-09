@@ -91,5 +91,6 @@ function scrollToCategoryTab(categoryId) {
       opacity: 0.7
 
     &.--active
-      opacity: 0.4
+      background-color: color-mix(in srgb, var(--color-background-accent) 10%, transparent)
+      color: var(--color-text-accent)
 </style>

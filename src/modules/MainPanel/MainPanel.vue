@@ -26,6 +26,8 @@ function onButtonClick() {
   width: 100%
   padding: 10px
   background-color: var(--color-background-primary)
+  box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.05)
+  border-radius: 24px 24px 0 0
 
   &__button
     width: 100%
